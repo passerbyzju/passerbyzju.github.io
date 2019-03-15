@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[NRR]]></title>
+    <url>%2F2019%2F03%2F15%2FNRR%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>paper</category>
+        <category>nrr</category>
+        <category>review</category>
+      </categories>
+      <tags>
+        <tag>x1,x2</tag>
+        <tag>x3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[paper]]></title>
+    <url>%2F2019%2F03%2F15%2Fpaper%2F</url>
+    <content type="text"><![CDATA[试一下]]></content>
+      <categories>
+        <category>shu</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>vasp</tag>
+        <tag>three</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python]]></title>
     <url>%2F2019%2F03%2F15%2Fpython%2F</url>
     <content type="text"></content>
