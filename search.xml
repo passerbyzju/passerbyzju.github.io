@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python]]></title>
+    <url>%2F2019%2F03%2F16%2Fpython%2F</url>
+    <content type="text"><![CDATA[life is short,I USE python]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[paper]]></title>
     <url>%2F2019%2F03%2F15%2Fpaper%2F</url>
     <content type="text"></content>
