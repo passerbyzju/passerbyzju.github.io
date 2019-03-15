@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[文献阅读]]></title>
+    <url>%2F2019%2F03%2F15%2F%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%2F</url>
+    <content type="text"><![CDATA[加油每一天]]></content>
+      <tags>
+        <tag>-[linux] -[python]</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[try]]></title>
     <url>%2F2019%2F03%2F15%2Ftry%2F</url>
     <content type="text"></content>
