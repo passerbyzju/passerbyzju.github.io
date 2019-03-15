@@ -1,70 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[NRR]]></title>
-    <url>%2F2019%2F03%2F15%2FNRR%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>paper</category>
-        <category>nrr</category>
-        <category>review</category>
-      </categories>
-      <tags>
-        <tag>x1,x2</tag>
-        <tag>x3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[paper]]></title>
     <url>%2F2019%2F03%2F15%2Fpaper%2F</url>
-    <content type="text"><![CDATA[试一下]]></content>
-      <categories>
-        <category>shu</category>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>vasp</tag>
-        <tag>three</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[python]]></title>
-    <url>%2F2019%2F03%2F15%2Fpython%2F</url>
     <content type="text"></content>
-      <categories>
-        <category>-[shu] -[python]</category>
-      </categories>
-      <tags>
-        <tag>-[new] -[old]</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[文献阅读]]></title>
-    <url>%2F2019%2F03%2F15%2F%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%2F</url>
-    <content type="text"><![CDATA[加油每一天]]></content>
-      <tags>
-        <tag>-[linux] -[python]</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[try]]></title>
-    <url>%2F2019%2F03%2F15%2Ftry%2F</url>
-    <content type="text"></content>
-      <tags>
-        <tag>two</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[2019315]]></title>
-    <url>%2F2019%2F03%2F15%2F2019315%2F</url>
-    <content type="text"><![CDATA[开始学习]]></content>
-      <tags>
-        <tag>VASP shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F03%2F15%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
