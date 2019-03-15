@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-15T12:20:01.188Z</updated>
+  <updated>2019-03-15T12:27:39.386Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python</title>
+    <link href="http://yoursite.com/2019/03/15/python/"/>
+    <id>http://yoursite.com/2019/03/15/python/</id>
+    <published>2019-03-15T12:22:44.000Z</published>
+    <updated>2019-03-15T12:27:39.386Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="-[shu] -[python]" scheme="http://yoursite.com/categories/shu-python/"/>
+    
+    
+      <category term="-[new] -[old]" scheme="http://yoursite.com/tags/new-old/"/>
+    
+  </entry>
   
   <entry>
     <title>文献阅读</title>
