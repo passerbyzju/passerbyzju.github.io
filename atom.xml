@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-15T06:37:35.399Z</updated>
+  <updated>2019-03-15T05:35:57.321Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,57 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>开始</title>
-    <link href="http://yoursite.com/2019/03/15/%E5%BC%80%E5%A7%8B/"/>
-    <id>http://yoursite.com/2019/03/15/开始/</id>
-    <published>2019-03-15T06:22:03.000Z</published>
-    <updated>2019-03-15T06:37:35.399Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="这是第一次"><a href="#这是第一次" class="headerlink" title="#这是第一次"></a>#这是第一次</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;这是第一次&quot;&gt;&lt;a href=&quot;#这是第一次&quot; class=&quot;headerlink&quot; title=&quot;#这是第一次&quot;&gt;&lt;/a&gt;#这是第一次&lt;/h2&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="VASP" scheme="http://yoursite.com/tags/VASP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test_my_site</title>
-    <link href="http://yoursite.com/2019/03/15/test-my-site-1/"/>
-    <id>http://yoursite.com/2019/03/15/test-my-site-1/</id>
-    <published>2019-03-15T06:09:32.000Z</published>
-    <updated>2019-03-15T06:09:32.313Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test_my_site</title>
-    <link href="http://yoursite.com/2019/03/15/test-my-site/"/>
-    <id>http://yoursite.com/2019/03/15/test-my-site/</id>
-    <published>2019-03-15T05:38:54.000Z</published>
-    <updated>2019-03-15T05:38:54.376Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
