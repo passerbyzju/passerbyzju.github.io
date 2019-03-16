@@ -5,9 +5,9 @@
   <subtitle>学会断舍离，静下心来学习</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="phdreamer.com/"/>
   <updated>2019-03-16T03:10:52.428Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>phdreamer.com/</id>
   
   <author>
     <name>路人乙</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>python</title>
-    <link href="http://yoursite.com/2019/03/16/python/"/>
-    <id>http://yoursite.com/2019/03/16/python/</id>
+    <link href="phdreamer.com/2019/03/16/python/"/>
+    <id>phdreamer.com/2019/03/16/python/</id>
     <published>2019-03-15T16:55:19.000Z</published>
     <updated>2019-03-16T03:10:52.428Z</updated>
     
@@ -38,17 +38,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="python" scheme="phdreamer.com/categories/python/"/>
     
     
-      <category term="Matplotlib" scheme="http://yoursite.com/tags/Matplotlib/"/>
+      <category term="Matplotlib" scheme="phdreamer.com/tags/Matplotlib/"/>
     
   </entry>
   
   <entry>
     <title>paper</title>
-    <link href="http://yoursite.com/2019/03/15/paper/"/>
-    <id>http://yoursite.com/2019/03/15/paper/</id>
+    <link href="phdreamer.com/2019/03/15/paper/"/>
+    <id>phdreamer.com/2019/03/15/paper/</id>
     <published>2019-03-15T12:45:10.000Z</published>
     <updated>2019-03-15T12:45:10.222Z</updated>
     
