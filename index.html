@@ -437,7 +437,7 @@
                 
               
 
-              <time title="创建时间：2019-03-16 00:55:19 / 修改时间：00:56:00" itemprop="dateCreated datePublished" datetime="2019-03-16T00:55:19+08:00">2019-03-16</time>
+              <time title="创建时间：2019-03-16 00:55:19 / 修改时间：10:31:22" itemprop="dateCreated datePublished" datetime="2019-03-16T00:55:19+08:00">2019-03-16</time>
             
 
             
@@ -447,6 +447,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -503,6 +521,239 @@
         
           
             <p><strong>life is short,I USE python</strong></p>
+<h1 id="Matplotlib-续1"><a href="#Matplotlib-续1" class="headerlink" title="Matplotlib (续1)"></a>Matplotlib (续1)</h1><p>之前已经分享过关于<strong>Matplotlib作图</strong>的文章，但是在使用的过程中还存在混乱之处。因此，本文的目的是理清使用Matplotlib作图的思路，从<strong>会作图</strong>过渡到<strong>做好图</strong>。当然，本文内容只是冰山一角。</p>
+<p>历史文章：</p>
+<hr>
+<p>首先，必须读懂下面的张图。只有读懂这张图，才不会在做图的过程中出现混乱或者遗漏的情况。不懂，请<strong>bing</strong>或者<strong>google</strong>。</p>
+<p><img src="https://matplotlib.org/_images/anatomy.png" alt="../../_images/anatomy.png"></p>
+<p>作图的基本思路：导入模块→确定图的尺寸→坐标轴的范围→线条的基本设置（颜色，大小，样式等）→图例设置</p>
+<p>→保存图片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a figure of size 8x6 inches, 80 dots per inch</span></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">6</span>),dpi=<span class="number">80</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a new subplot from a grid of 1x1</span></span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set x limits</span></span><br><span class="line">plt.xlim(<span class="number">-4.0</span>, <span class="number">4.0</span>)</span><br><span class="line"><span class="comment"># Set x ticks</span></span><br><span class="line">plt.xticks(np.linspace(<span class="number">-4</span>, <span class="number">4</span>, <span class="number">9</span>, endpoint=<span class="literal">True</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#set ylimits</span></span><br><span class="line">plt.ylim(<span class="number">-1.2</span>,<span class="number">1.2</span>)</span><br><span class="line"><span class="comment"># Set y ticks</span></span><br><span class="line">plt.yticks(np.linspace(<span class="number">-1.2</span>,<span class="number">1.2</span>,<span class="number">5</span>,endpoint=<span class="literal">True</span>))</span><br><span class="line"></span><br><span class="line">X = np.linspace(-np.pi, np.pi, <span class="number">256</span>, endpoint=<span class="literal">True</span>)</span><br><span class="line">C, S = np.cos(X), np.sin(X)</span><br><span class="line"></span><br><span class="line">marker_on=[<span class="number">5</span>,<span class="number">20</span>,<span class="number">27</span>,<span class="number">80</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot cosine with a blue continuous line of width 1 (pixels)</span></span><br><span class="line">plt.plot(X,C,color=<span class="string">"#fd3c06"</span>,linewidth=<span class="number">1.0</span>,linestyle=<span class="string">':'</span>,marker=<span class="string">'*'</span>,markevery=marker_on,label=<span class="string">"cosine"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot sine with a green continuous line of width 1 (pixels)</span></span><br><span class="line">plt.plot(X,S,color=<span class="string">"green"</span>,linewidth=<span class="number">1.0</span>,linestyle=<span class="string">"--"</span>,marker=<span class="string">'s'</span>,markevery=marker_on,label=<span class="string">"sine"</span>)</span><br><span class="line"><span class="comment">#Adding a legend</span></span><br><span class="line">plt.legend(loc= <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save figure using 100dots per inch</span></span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"try.jpg"</span>,dpi=<span class="number">100</span>,bbox_inches=<span class="string">'tight'</span>)</span><br><span class="line"><span class="comment"># Show result on screen</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>注：本文统一使用关键词的方式</p>
+<h2 id="plt-figure"><a href="#plt-figure" class="headerlink" title="plt.figure()"></a>plt.figure()</h2><p>figure（）可设置的参数</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num</code></td>
+<td><code>1</code></td>
+<td>number of figure</td>
+</tr>
+<tr>
+<td><code>figsize</code></td>
+<td><code>figure.figsize</code></td>
+<td>figure size in inches (width, height)</td>
+</tr>
+<tr>
+<td><code>dpi</code></td>
+<td><code>figure.dpi</code></td>
+<td>resolution in dots per inch</td>
+</tr>
+<tr>
+<td><code>facecolor</code></td>
+<td><code>figure.facecolor</code></td>
+<td>color of the drawing background</td>
+</tr>
+<tr>
+<td><code>edgecolor</code></td>
+<td><code>figure.edgecolor</code></td>
+<td>color of edge around the drawing background</td>
+</tr>
+<tr>
+<td><code>frameon</code></td>
+<td><code>True</code></td>
+<td>draw figure frame or not</td>
+</tr>
+</tbody>
+</table>
+<p><strong>figsize,dpi为常用的两个参数，决定了图形的大小以及像素的高低。</strong></p>
+<p>补充两个知识点，</p>
+<p><code>1英寸</code>=<code>2.54cm</code></p>
+<blockquote>
+<p>DPI（Dot Per Inch） 表示打印分辨率，指每英寸长度上的点数。DPI 又可细分为水平分辨率和垂直分辨率，例如一张 “1英寸<em>1英寸” （1英寸=2.54cm）的图片，如果它的水平分辨率是100 dpi，垂直分辨率是50 dpi，那么就是说，它水平每英寸分成100小段，垂直每英寸分成50小段，就像米尺上的一格格那样。那么这张图总共有100</em>50=5000个格子，这张图片共有5000像素。由于它的水平分辨率和垂直分辨率不相等，所以每个像素是一个微小的长方形，如下图左上角的小长方形：<br>原文：<a href="https://blog.csdn.net/wangwenjing90/article/details/8791415" target="_blank" rel="noopener">https://blog.csdn.net/wangwenjing90/article/details/8791415</a> </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">6</span>),dpi=<span class="number">80</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="plt-plot-）"><a href="#plt-plot-）" class="headerlink" title="plt.plot(）"></a>plt.plot(）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(X,C,color=<span class="string">"#fd3c06"</span>,linewidth=<span class="number">1.0</span>,linestyle=<span class="string">':'</span>,marker=<span class="string">'*'</span>,markevery=marker_on,label=<span class="string">"cosine"</span>)</span><br><span class="line">plt.plot(X,S,color=<span class="string">"green"</span>,linewidth=<span class="number">1.0</span>,linestyle=<span class="string">"--"</span>,marker=<span class="string">'s'</span>,markevery=marker_on,label=<span class="string">"sine"</span>)</span><br></pre></td></tr></table></figure>
+<p>plt.plot()可控制的参数</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Appearance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alpha (or a)</td>
+<td>alpha transparency on 0-1 scale</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_alpha_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>antialiased</td>
+<td>True or False - use antialised rendering</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_aliased_001.png" alt="img"> <img src="http://scipy-lectures.org/_images/sphx_glr_plot_antialiased_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>color (or c)</td>
+<td>matplotlib color arg</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_color_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>linestyle (or ls)</td>
+<td>see <a href="http://scipy-lectures.org/intro/matplotlib/index.html#line-properties" target="_blank" rel="noopener">Line properties</a></td>
+<td></td>
+</tr>
+<tr>
+<td>linewidth (or lw)</td>
+<td>float, the line width in points</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_linewidth_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>solid_capstyle</td>
+<td>Cap style for solid lines</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_solid_capstyle_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>solid_joinstyle</td>
+<td>Join style for solid lines</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_solid_joinstyle_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>dash_capstyle</td>
+<td>Cap style for dashes</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_dash_capstyle_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>dash_joinstyle</td>
+<td>Join style for dashes</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_dash_joinstyle_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>marker</td>
+<td>see <a href="http://scipy-lectures.org/intro/matplotlib/index.html#markers" target="_blank" rel="noopener">Markers</a></td>
+<td></td>
+</tr>
+<tr>
+<td>markeredgewidth (mew)</td>
+<td>line width around the marker symbol</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_mew_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>markeredgecolor (mec)</td>
+<td>edge color if a marker is used</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_mec_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>markerfacecolor (mfc)</td>
+<td>face color if a marker is used</td>
+<td><img src="http://scipy-lectures.org/_images/sphx_glr_plot_mfc_001.png" alt="img"></td>
+</tr>
+<tr>
+<td>markersize (ms)</td>
+<td>size of the marker in points</td>
+</tr>
+</tbody>
+</table>
+<p>这么多参数，不是每个都会用到。其中，<strong>alpha,color,linewidth</strong>,<strong>linestyle，marke</strong>r使用频率较高。</p>
+<h3 id="color"><a href="#color" class="headerlink" title="color"></a>color</h3><p>常规的几种颜色，用简写或者全称都可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">b: blue</span><br><span class="line">g: green</span><br><span class="line">r: red</span><br><span class="line">c: cyan</span><br><span class="line">m: magenta</span><br><span class="line">y: yellow</span><br><span class="line">k: black</span><br><span class="line">w: white</span><br></pre></td></tr></table></figure>
+<p>也可以使用颜色代码的方式选择合适的颜色<code>color=&quot;#fd3c06&quot;</code></p>
+<blockquote>
+<p>图片中的代码，依旧是RGB色值的表示。在计算机中，RGB的每个通道，通常都以8位2进制空间来存储，因此能对每个通道进行256阶分级：<br>以10进制数表示时，范围为0~255；<br>以16进制数表示时，范围为0~FF。</p>
+<p>图中 #412ed1 的表示方法，就是采用了16进制的表示：<br>开头的 # ，是一个标记（这种表示常见于html及css等编码中）；<br>后面的6个数码，2个2个2个分隔，依次对应R、G、B三个通道。</p>
+<p>也就是说，#412ed1相当于 R=(hex)41, G=(hex)2e, B=(hex)d1。</p>
+<p>作者：钱争予</p>
+<p>链接：<a href="https://www.zhihu.com/question/19690341/answer/12743818" target="_blank" rel="noopener">https://www.zhihu.com/question/19690341/answer/12743818</a></p>
+<p>来源：知乎</p>
+</blockquote>
+<blockquote>
+<p>RGB是色光的色彩模式。R代表红色，G代表绿色，B代表蓝色，三种色彩叠加形成了其它的色彩。因为三种颜色都有256个亮度水平级，所以三种色彩叠加就形成1670万种颜色了。也就是真彩色，通过它们足以在现绚丽的世界。对于单独的R或G或B而言，当数值为0的时候，代表这个颜色不发光；如果为255，则该颜色为最高亮度。这就好像调光台灯一样，数字0就等于把灯关了，数字255就等于把调光旋钮开到最大。</p>
+<p><a href="https://www.biaodianfu.com/color.html" target="_blank" rel="noopener">https://www.biaodianfu.com/color.html</a></p>
+</blockquote>
+<p>获取颜色代码的方式：</p>
+<ul>
+<li><a href="https://xkcd.com/color/rgb/" target="_blank" rel="noopener">https://xkcd.com/color/rgb/</a></li>
+</ul>
+<p><img src="C:\Users\zheng\AppData\Roaming\Typora\typora-user-images\1548817615220.png" alt="1548817615220"></p>
+<ul>
+<li>google，可以调节自己喜欢的颜色</li>
+</ul>
+<p><img src="C:\Users\zheng\AppData\Roaming\Typora\typora-user-images\1548834857928.png" alt="1548834857928"></p>
+<h3 id="linestyle"><a href="#linestyle" class="headerlink" title="linestyle"></a>linestyle</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-                solid line style</span><br><span class="line">--               dashed line style</span><br><span class="line">-.               dash-dot line style</span><br><span class="line">:                dotted line style</span><br></pre></td></tr></table></figure>
+<h3 id="marker"><a href="#marker" class="headerlink" title="marker"></a>marker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.                point marker</span><br><span class="line">,                pixel marker</span><br><span class="line">o                circle marker</span><br><span class="line">v                triangle_down marker</span><br><span class="line">^                triangle_up marker</span><br><span class="line">&lt;                triangle_left marker</span><br><span class="line">&gt;                triangle_right marker</span><br><span class="line">1                tri_down marker</span><br><span class="line">2                tri_up marker</span><br><span class="line">3                tri_left marker</span><br><span class="line">4                tri_right marker</span><br><span class="line">s                square marker</span><br><span class="line">p                pentagon marker</span><br><span class="line">*                star marker</span><br><span class="line">h                hexagon1 marker</span><br><span class="line">H                hexagon2 marker</span><br><span class="line">+                plus marker</span><br><span class="line">x                x marker</span><br><span class="line">D                diamond marker</span><br><span class="line">d                thin_diamond marker</span><br><span class="line">|                vline marker</span><br><span class="line">_                hline marker</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.stack.imgur.com/Zn9cn.png" alt="img"></p>
+<h2 id="plt-legend"><a href="#plt-legend" class="headerlink" title="plt.legend()"></a>plt.legend()</h2><p>设置图例的位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.legend(loc= <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Location String</th>
+<th>Location Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>‘best’</td>
+<td>0</td>
+</tr>
+<tr>
+<td>‘upper right’</td>
+<td>1</td>
+</tr>
+<tr>
+<td>‘upper left’</td>
+<td>2</td>
+</tr>
+<tr>
+<td>‘lower left’</td>
+<td>3</td>
+</tr>
+<tr>
+<td>‘lower right’</td>
+<td>4</td>
+</tr>
+<tr>
+<td>‘right’</td>
+<td>5</td>
+</tr>
+<tr>
+<td>‘center left’</td>
+<td>6</td>
+</tr>
+<tr>
+<td>‘center right’</td>
+<td>7</td>
+</tr>
+<tr>
+<td>‘lower center’</td>
+<td>8</td>
+</tr>
+<tr>
+<td>‘upper center’</td>
+<td>9</td>
+</tr>
+<tr>
+<td>‘center’</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="plt-fill-between"><a href="#plt-fill-between" class="headerlink" title="plt.fill_between()"></a>plt.fill_between()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">256</span></span><br><span class="line">X = np.linspace(-np.pi, np.pi, n, endpoint=<span class="literal">True</span>)</span><br><span class="line">Y = np.sin(<span class="number">2</span> * X)</span><br><span class="line"></span><br><span class="line">plt.axes([<span class="number">0.025</span>, <span class="number">0.025</span>, <span class="number">0.95</span>, <span class="number">0.95</span>])</span><br><span class="line"></span><br><span class="line">plt.plot(X, Y +<span class="number">1</span>, color=<span class="string">'blue'</span>, alpha=<span class="number">1.00</span>)</span><br><span class="line">plt.fill_between(X, <span class="number">1</span>, Y+<span class="number">1</span> , facecolor=<span class="string">'blue'</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">plt.plot(X, Y - <span class="number">1</span>, color=<span class="string">'blue'</span>, alpha=<span class="number">1.00</span>)</span><br><span class="line">plt.fill_between(X, <span class="number">-1</span>, Y - <span class="number">1</span>, (Y - <span class="number">1</span>) &gt; <span class="number">-1</span>, color=<span class="string">'blue'</span>, alpha=<span class="number">.25</span>)</span><br><span class="line">plt.fill_between(X, <span class="number">-1</span>, Y - <span class="number">1</span>, (Y - <span class="number">1</span>) &lt; <span class="number">-1</span>, color=<span class="string">'red'</span>,  alpha=<span class="number">.25</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-np.pi, np.pi)</span><br><span class="line">plt.xticks(())</span><br><span class="line">plt.ylim(<span class="number">-2.5</span>, <span class="number">2.5</span>)</span><br><span class="line">plt.yticks(())</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/kabuto_hui/article/details/84979606" target="_blank" rel="noopener">https://blog.csdn.net/kabuto_hui/article/details/84979606</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.fill_between(X, 1, Y+1 , color=&apos;blue&apos;, alpha=0.5)</span><br></pre></td></tr></table></figure>
+<p><code>x</code>：第一个参数表示覆盖的区域，我直接复制为x，表示整个x都覆盖<br><code>1</code>：表示覆盖的下限<br><code>y+1</code>：表示覆盖的上限是y这个曲线<br><code>facecolor</code>：覆盖区域的颜色<br><code>alpha</code>：覆盖区域的透明度[0,1],其值越大，表示越不透明</p>
+<h2 id="plt-savefig"><a href="#plt-savefig" class="headerlink" title="plt.savefig()"></a>plt.savefig()</h2><p>可以保存好的大部分图片类型,如<code>jpg,png</code>等，也可以保存为<code>pdf</code>格式,bbox_inches=’tight’删除空白</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.savefig(&quot;try.jpg&quot;,dpi=100,bbox_inches=&apos;tight&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><p><a href="http://scipy-lectures.org/intro/matplotlib/index.html" target="_blank" rel="noopener">http://scipy-lectures.org/intro/matplotlib/index.html</a></p>
+<p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" target="_blank" rel="noopener">https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot</a></p>
+<p>## </p>
 
           
         
@@ -757,6 +1008,23 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
               
                 
@@ -848,7 +1116,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6字</span>
+  <span class="post-count">博客全站共1.6k字</span>
 </div>
 
         
