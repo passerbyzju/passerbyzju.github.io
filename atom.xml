@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://phdreamer.com/"/>
-  <updated>2019-03-17T05:42:14.080Z</updated>
+  <updated>2019-03-17T14:48:12.190Z</updated>
   <id>http://phdreamer.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xuexi</title>
+    <link href="http://phdreamer.com/posts/cef52f74.html"/>
+    <id>http://phdreamer.com/posts/cef52f74.html</id>
+    <published>2019-03-17T14:47:27.000Z</published>
+    <updated>2019-03-17T14:48:12.190Z</updated>
+    
+    <content type="html"><![CDATA[<p>试试看看</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;试试看看&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Matplotlib 教程</title>
