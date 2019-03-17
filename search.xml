@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[服务器上运行Python作图脚本]]></title>
+    <url>%2Fposts%2F9d2ac3c9.html</url>
+    <content type="text"><![CDATA[服务器上运行Python作图脚本 123456789101112131415#!/usr/bin/python# -*- coding:utf-8 -*-import matplotlib as mplmpl.use('Agg')from matplotlib import pyplot as pltimport numpy as npx,y=np.loadtxt('energy',usecols=(0,5),unpack=True)plt.xlabel('Lattice')plt.ylabel('Energy:eV')plt.title('fccSi',fontsize= 20)plt.plot(x,y,'bs--',linewidth=1.0)plt.ylim(-6,-2)plt.xlim(3,5.5)#fig=plt.gcf()plt.savefig('lattice-energy-si') 关键点1123456#!/usr/bin/python是告诉操作系统执行这个脚本的时候，调用/usr/bin下的python解释器#!/usr/bin/env python到env设置里查找python的安装路径，再调用对应路径下的解释器程序完成操作。防止操作系统用户没有将python装在默认的/usr/bin路径里 关键点2123import matplotlib as mplmpl.use('Agg')from matplotlib import pyplot as plt 123Linux没有GUI的情况下使用matplotlib绘图,必须在**from matplotlib import pyplot as plt**前添加import matplotlib as mplmpl.use('Agg') 关键点3np.loadtxt加载数据 1loadtxt(fname, dtype=&lt;class &apos;float&apos;&gt;, comments=&apos;#&apos;, delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0) fname要读取的文件、文件名、或生成器。 dtype数据类型，默认float。 comments注释。 delimiter分隔符，默认是空格。 skiprows跳过前几行读取，默认是0，必须是int整型。 usecols：要读取哪些列，0是第一列。例如，usecols = （1,4,5）将提取第2，第5和第6列。默认读取所有列。 unpack如果为True，将分列读取]]></content>
+      <categories>
+        <category>VASP</category>
+      </categories>
+      <tags>
+        <tag>脚本</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[xuexi]]></title>
     <url>%2Fposts%2Fcef52f74.html</url>
     <content type="text"><![CDATA[试试看看]]></content>

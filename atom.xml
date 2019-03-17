@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://phdreamer.com/"/>
-  <updated>2019-03-17T14:48:22.272Z</updated>
+  <updated>2019-03-17T15:15:31.344Z</updated>
   <id>http://phdreamer.com/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>服务器上运行Python作图脚本</title>
+    <link href="http://phdreamer.com/posts/9d2ac3c9.html"/>
+    <id>http://phdreamer.com/posts/9d2ac3c9.html</id>
+    <published>2019-03-17T15:13:52.000Z</published>
+    <updated>2019-03-17T15:15:31.344Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="服务器上运行Python作图脚本"><a href="#服务器上运行Python作图脚本" class="headerlink" title="服务器上运行Python作图脚本"></a>服务器上运行Python作图脚本</h3><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line">mpl.use(<span class="string">'Agg'</span>)</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x,y=np.loadtxt(<span class="string">'energy'</span>,usecols=(<span class="number">0</span>,<span class="number">5</span>),unpack=<span class="literal">True</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Lattice'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Energy:eV'</span>)</span><br><span class="line">plt.title(<span class="string">'fccSi'</span>,fontsize= <span class="number">20</span>)</span><br><span class="line">plt.plot(x,y,<span class="string">'bs--'</span>,linewidth=<span class="number">1.0</span>)</span><br><span class="line">plt.ylim(<span class="number">-6</span>,<span class="number">-2</span>)</span><br><span class="line">plt.xlim(<span class="number">3</span>,<span class="number">5.5</span>)</span><br><span class="line"><span class="comment">#fig=plt.gcf()</span></span><br><span class="line">plt.savefig(<span class="string">'lattice-energy-si'</span>)</span><br></pre></td></tr></table></figure><h4 id="关键点1"><a href="#关键点1" class="headerlink" title="关键点1"></a>关键点1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line">是告诉操作系统执行这个脚本的时候，调用/usr/bin下的python解释器</span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line">到env设置里查找python的安装路径，再调用对应路径下的解释器程序完成操作。</span><br><span class="line">防止操作系统用户没有将python装在默认的/usr/bin路径里</span><br></pre></td></tr></table></figure><h3 id="关键点2"><a href="#关键点2" class="headerlink" title="关键点2"></a>关键点2</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line">mpl.use(<span class="string">'Agg'</span>)</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Linux没有GUI的情况下使用matplotlib绘图,必须在**<span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt**前添加</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line">mpl.use(<span class="string">'Agg'</span>)</span><br></pre></td></tr></table></figure><h3 id="关键点3"><a href="#关键点3" class="headerlink" title="关键点3"></a>关键点3</h3><p>np.loadtxt加载数据</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loadtxt(fname, dtype=&lt;class &apos;float&apos;&gt;, comments=&apos;#&apos;, delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)</span><br></pre></td></tr></table></figure><ul><li><code>fname</code>要读取的文件、文件名、或生成器。</li><li><code>dtype</code>数据类型，默认float。</li><li><code>comments</code>注释。</li><li><code>delimiter</code>分隔符，默认是空格。</li><li><code>skiprows</code>跳过前几行读取，默认是0，必须是int整型。</li><li><code>usecols</code>：要读取哪些列，0是第一列。例如，usecols = （1,4,5）将提取第2，第5和第6列。默认读取所有列。</li><li><code>unpack</code>如果为<code>True</code>，将分列读取</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;服务器上运行Python作图脚本&quot;&gt;&lt;a href=&quot;#服务器上运行Python作图脚本&quot; class=&quot;headerlink&quot; title=&quot;服务器上运行Python作图脚本&quot;&gt;&lt;/a&gt;服务器上运行Python作图脚本&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="VASP" scheme="http://phdreamer.com/categories/VASP/"/>
+    
+    
+      <category term="脚本" scheme="http://phdreamer.com/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>xuexi</title>
     <link href="http://phdreamer.com/posts/cef52f74.html"/>
     <id>http://phdreamer.com/posts/cef52f74.html</id>
     <published>2019-03-17T14:47:27.000Z</published>
-    <updated>2019-03-17T14:48:22.272Z</updated>
+    <updated>2019-03-17T15:07:02.049Z</updated>
     
     <content type="html"><![CDATA[<p>试试看看</p>]]></content>
     
