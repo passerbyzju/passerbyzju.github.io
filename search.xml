@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[我失控了（一）]]></title>
+    <url>%2Fposts%2Ff3167402.html</url>
+    <content type="text"><![CDATA[这一段时间我失控了，很痛苦也很疲惫。我找到了自己失控的原因，努力让自己回到正轨，在此记录一下 失控的症状 熬夜，迟迟不愿睡觉（之前基本12点准时睡觉） 周末害怕出门，不去图书馆学习，待在寝室麻木发呆，不知道想要做什么（之前周末基本都会去图书馆） 不愿意运动，觉得很累（之前一周能够运动3次左右） 科研上遇到问题，想要解决，停不下来，不按时吃饭睡觉 英语也没有坚持下来好好学习 ​ 我在思考自己为何会失控，是因为博士毕业压力大还是说对生活失去了信心？为了摆脱自己这种失控的状态，我又开始看《自控力》这本书，希望能够找到失控的根源。 “道德许可效应”1234“我已经这么好了，应该得到一点奖励”，这种对补偿的渴望常常使我们堕落。我们忘记了自己真正的目标，向诱惑屈服了。因为过去的善行而感觉良好，这让你为今后的纵容找到了借口。“道德许可” 最糟糕的部分并不是它可疑的逻辑，而是它会诱使我们做出背离自己最大利益的事情。 这一点应该是我失控的最重要原因之一。我内心会觉得周一到周五都规律学习生活，周末可以“奖励”自己放纵一下。其实，我的想法错了。我周一到周五规律学习生活，只是我完成目标的一种手段（博士毕业，学习更多技能等）。我把支持目标实现的行为本身误以为是目标本身，实际上目标并还没有实现。而合理利用周末，也是实现目标的重要手段之一。要想真正实现目标，就需要我们始终如一，不能把进步当作是释放的借口，导致“进一步退两大步”，进步可能让我们放弃曾经为之奋斗的东西。 12345取消许可，牢记理由：回忆一次拒绝诱惑的经历,这给了他们道德许可。会议一次当时为什么拒绝了诱惑。 道德陷阱：每次自控都是一种惩罚，只有放纵自我才是奖励。走进道德陷阱，我们就会像个必须被强迫完成目标，然后为做出的努力索要奖励的人了。想要走出”道德陷阱“，需要记住自己真正的目标。想要做到始终如一，我们就需要认同目标本身，所有的手段都是为目标服务，不存在好坏之分。 增强意志力的一些方法：1234567891.冥想2.降低呼吸的频率到每分钟4~6次，增加抗压性 3.每天5min意志力4.睡眠5.放松能让你意志力恢复储备 意志力告急的方法： 1234567如果我认真看文献，我就可以按时毕业如果我不熬夜，我的身体将会更加的健康如果我努力学英语，我的英语就会更好如果我努力写代码，我就可以多一项技能，让自己找到更好的工作]]></content>
+      <categories>
+        <category>-成长</category>
+      </categories>
+      <tags>
+        <tag>-心理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LDH模型搭建中的一些问题]]></title>
+    <url>%2Fposts%2F5ca983fc.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[服务器上运行Python作图脚本]]></title>
     <url>%2Fposts%2F9d2ac3c9.html</url>
     <content type="text"><![CDATA[服务器上运行Python作图脚本 123456789101112131415#!/usr/bin/python# -*- coding:utf-8 -*-import matplotlib as mplmpl.use('Agg')from matplotlib import pyplot as pltimport numpy as npx,y=np.loadtxt('energy',usecols=(0,5),unpack=True)plt.xlabel('Lattice')plt.ylabel('Energy:eV')plt.title('fccSi',fontsize= 20)plt.plot(x,y,'bs--',linewidth=1.0)plt.ylim(-6,-2)plt.xlim(3,5.5)#fig=plt.gcf()plt.savefig('lattice-energy-si') 关键点1123456#!/usr/bin/python是告诉操作系统执行这个脚本的时候，调用/usr/bin下的python解释器#!/usr/bin/env python到env设置里查找python的安装路径，再调用对应路径下的解释器程序完成操作。防止操作系统用户没有将python装在默认的/usr/bin路径里 关键点2123import matplotlib as mplmpl.use('Agg')from matplotlib import pyplot as plt 123Linux没有GUI的情况下使用matplotlib绘图,必须在**from matplotlib import pyplot as plt**前添加import matplotlib as mplmpl.use('Agg') 关键点3np.loadtxt加载数据 1loadtxt(fname, dtype=&lt;class &apos;float&apos;&gt;, comments=&apos;#&apos;, delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0) fname要读取的文件、文件名、或生成器。 dtype数据类型，默认float。 comments注释。 delimiter分隔符，默认是空格。 skiprows跳过前几行读取，默认是0，必须是int整型。 usecols：要读取哪些列，0是第一列。例如，usecols = （1,4,5）将提取第2，第5和第6列。默认读取所有列。 unpack如果为True，将分列读取]]></content>
@@ -10,11 +26,6 @@
       <tags>
         <tag>脚本</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[xuexi]]></title>
-    <url>%2Fposts%2Fcef52f74.html</url>
-    <content type="text"><![CDATA[试试看看]]></content>
   </entry>
   <entry>
     <title><![CDATA[Matplotlib 教程]]></title>
